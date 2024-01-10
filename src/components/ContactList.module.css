@@ -1,0 +1,34 @@
+.container {
+  width: 100%;
+  margin-bottom: 100px;
+  background-color: rgb(245, 245, 245);
+  border-radius: 5px;
+}
+
+.container h3 {
+  color: #6c6c6c;
+  font-size: 1.5rem;
+  padding: 20px;
+  margin: 0 auto;
+  text-align: center;
+  width: 100%;
+  border-bottom: 3px solid #fff;
+  border-radius: 5px;
+  background-color: rgb(245, 245, 245);
+}
+
+.message {
+  height: 100px;
+  line-height: 100px;
+  text-align: center;
+  font-weight: bold;
+  color: #dedede;
+}
+
+.contacts {
+  border: 2px solid #ffffff;
+  list-style: none;
+  margin-top: 0px;
+  padding: 5px;
+  border-radius: 5px;
+}

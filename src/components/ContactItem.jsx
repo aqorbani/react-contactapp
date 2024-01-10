@@ -1,4 +1,5 @@
 import PropTypes from "prop-types";
+import styles from "./ContactItem.module.css";
 
 const ContactItem = ({
   contact: { id, name, email, phone },
@@ -10,16 +11,10 @@ const ContactItem = ({
   };
 
   return (
-    <li key={id}>
+    <li className={styles.item}>
       <p>{name}</p>
-      <p>
-        <span>📫</span>
-        {email}
-      </p>
-      <p>
-        <span>📱</span>
-        {phone}
-      </p>
+      <p>{email}</p>
+      <p>{phone}</p>
       <p>
         <button onClick={() => deleteHandler(id)}>🗑</button>
       </p>

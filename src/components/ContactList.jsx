@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
 import ContactItem from "./ContactItem";
+import styles from "./ContactList.module.css";
 
 const ContactList = ({ contacts, deleteHandler }) => {
   ContactList.propTypes = {
@@ -7,10 +8,10 @@ const ContactList = ({ contacts, deleteHandler }) => {
     deleteHandler: PropTypes.func,
   };
   return (
-    <div>
-      <h1>Contacts List</h1>
+    <div className={styles.container}>
+      <h3>Contacts List</h3>
       {contacts.length ? (
-        <ul>
+        <ul className={styles.contacts}>
           {contacts.map((contact) => (
             <ContactItem
               key={contact.id}
@@ -20,7 +21,7 @@ const ContactList = ({ contacts, deleteHandler }) => {
           ))}
         </ul>
       ) : (
-        <p>No Contacts Yet.</p>
+        <p className={styles.message}>No Contacts Yet.</p>
       )}
     </div>
   );
