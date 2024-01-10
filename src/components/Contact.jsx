@@ -38,6 +38,11 @@ const Contact = () => {
     });
   };
 
+  const deleteHandler = (id) => {
+    const newContactList = contactList.filter((contact) => contact.id !== id);
+    setContactList(newContactList);
+  };
+
   return (
     <div>
       <div>
@@ -54,7 +59,7 @@ const Contact = () => {
         <button onClick={addHandler}>Add Contact</button>
       </div>
       <div>{alert && <p>{alert}</p>}</div>
-      <ContactList contacts={contactList} />
+      <ContactList contacts={contactList} deleteHandler={deleteHandler} />
     </div>
   );
 };

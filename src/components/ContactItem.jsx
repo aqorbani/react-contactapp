@@ -1,9 +1,14 @@
 import PropTypes from "prop-types";
 
-const ContactItem = ({ contact: { id, name, email, phone } }) => {
+const ContactItem = ({
+  contact: { id, name, email, phone },
+  deleteHandler,
+}) => {
   ContactItem.propTypes = {
     contact: PropTypes.object,
+    deleteHandler: PropTypes.func,
   };
+
   return (
     <li key={id}>
       <p>{name}</p>
@@ -16,7 +21,7 @@ const ContactItem = ({ contact: { id, name, email, phone } }) => {
         {phone}
       </p>
       <p>
-        <span>🗑</span>
+        <button onClick={() => deleteHandler(id)}>🗑</button>
       </p>
     </li>
   );
