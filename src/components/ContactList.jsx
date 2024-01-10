@@ -1,4 +1,5 @@
 import PropTypes from "prop-types";
+import ContactItem from "./ContactItem";
 
 const ContactList = ({ contacts }) => {
   ContactList.propTypes = {
@@ -7,11 +8,15 @@ const ContactList = ({ contacts }) => {
   return (
     <div>
       <h1>Contacts List</h1>
-      <ul>
-        {contacts.map((contact, index) => (
-          <li key={index}>{contact.name}</li>
-        ))}
-      </ul>
+      {contacts.length ? (
+        <ul>
+          {contacts.map((contact) => (
+            <ContactItem key={contact.id} contact={contact} />
+          ))}
+        </ul>
+      ) : (
+        <p>No Contacts Yet.</p>
+      )}
     </div>
   );
 };
